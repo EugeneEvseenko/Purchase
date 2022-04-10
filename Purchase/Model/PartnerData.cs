@@ -15,9 +15,9 @@ namespace Purchase.Model
         public long Id { get; set; }
         [Required, Column("name"), MaxLength(200)]
         public string Name { get; set; }
-        [Required, Column("bin")]
-        public int BIN { get; set; }
-        [Required, Column("gender")]
+        [Required, Column("bin"), MaxLength(12)]
+        public string BIN { get; set; }
+        [Required, Column("type")]
         public PartnerType Type { get; set; }
         [Required, Column("phys_address"), MaxLength(200)]
         public string PhysicalAddress { get; set; }

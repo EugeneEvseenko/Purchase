@@ -26,7 +26,7 @@ namespace Purchase.Model
         [Required, Column("fee")]
         public float Fee { get; set; }
         [Required, Column("status")]
-        public TransactionError Status { get; set; }
+        public TransactionStates Status { get; set; }
         [Required, Column("parntner_id")]
         public long PartnerId { get; set; }
         [Required, Column("partner_acc_id")]

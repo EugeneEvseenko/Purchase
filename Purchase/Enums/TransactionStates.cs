@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace Purchase.Enums
 {
-    public enum TransactionError
+    public enum TransactionStates
     {
+        /// <summary>
+        /// В обработке
+        /// </summary>
+        InProgress = 100,
+        /// <summary>
+        /// Успешно
+        /// </summary>
+        Success = 200,
         /// <summary>
         /// Не хватило средств
         /// </summary>

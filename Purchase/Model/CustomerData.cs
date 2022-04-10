@@ -15,8 +15,8 @@ namespace Purchase.Model
         public long Id { get; set; }
         [Required, Column("full_name"), MaxLength(200)]
         public string FullName { get; set; }
-        [Required, Column("iin")]
-        public long IIN { get; set; }
+        [Required, Column("iin"), MaxLength(12)]
+        public string IIN { get; set; }
         [Required, Column("gender")]
         public Gender Gender { get; set; }
         [Required, Column("birthday")]

@@ -19,7 +19,9 @@ namespace Purchase
 
         public AppContext()
         {
+            Console.WriteLine("Connecting to database");
             Database.EnsureCreated();
+            Console.WriteLine("Database connected\n");
         }
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -30,7 +32,9 @@ namespace Purchase
             builder.Entity<PartnerData>()
                 .Property(e => e.Type);
             builder.Entity<Transaction>()
+                .ToTable("Transactions", "TRAN")
                 .Property(e => e.Status);
+                
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
