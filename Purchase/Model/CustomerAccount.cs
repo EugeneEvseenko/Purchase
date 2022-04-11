@@ -10,7 +10,7 @@ namespace Purchase.Model
 {
     public class CustomerAccount
     {
-        [Required, Column("id")]
+        [Required, Column("id"), ]
         public long Id { get; set; }
         [Required, Column("currency"), MaxLength(3)]
         public string Currency { get; set; }

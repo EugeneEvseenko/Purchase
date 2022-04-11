@@ -23,6 +23,7 @@ namespace Purchase
             Database.EnsureCreated();
             Console.WriteLine("Database connected\n");
         }
+        // https://docs.microsoft.com/en-us/ef/core/modeling/keys?tabs=data-annotations
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<CustomerAccount>();
@@ -39,7 +40,8 @@ namespace Purchase
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=localhost\SQLEXPRESS;Integrated Security=True;Database=PurchaseProcessing;");
+            optionsBuilder.UseSqlServer(@"Data Source=tcp:kon-test-dbl;Initial Catalog=PurchaseProcessing;UID=KaspiBusinessUser;PWD=k0SX4GFf;Pooling=true;MultipleActiveResultSets=True;");
+            //optionsBuilder.UseSqlServer(@"Server=localhost\SQLEXPRESS;Integrated Security=True;Database=PurchaseProcessing;");
         }
     }
 }

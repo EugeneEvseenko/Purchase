@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Purchase.Model
 {
+    // https://docs.microsoft.com/en-us/ef/core/modeling/value-comparers?tabs=ef5
     public class CustomerData
     {
         [Required, Column("id")]
@@ -19,7 +20,7 @@ namespace Purchase.Model
         public string IIN { get; set; }
         [Required, Column("gender")]
         public Gender Gender { get; set; }
-        [Required, Column("birthday")]
+        [Required, Column("birthday", TypeName = "date")]
         public DateTime Birthday { get; set; }
         [Required, Column("physical_address"), MaxLength(200)]
         public string PhysicalAddress { get; set; }
